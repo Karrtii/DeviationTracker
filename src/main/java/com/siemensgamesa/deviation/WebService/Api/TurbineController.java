@@ -1,7 +1,7 @@
 package com.siemensgamesa.deviation.WebService.Api;
 
-import com.siemensgamesa.deviation.Model.ProjectModel;
-import com.siemensgamesa.deviation.WebService.Service.Interface.IProjectService;
+import com.siemensgamesa.deviation.Model.TurbineModel;
+import com.siemensgamesa.deviation.WebService.Service.Interface.ITurbineService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,14 +12,14 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/project")
-public class ProjectController {
+@RequestMapping("/api/turbine")
+public class TurbineController {
 
-    private final IProjectService projectService;
+    private final ITurbineService turbineService;
 
     @GetMapping
-    public ResponseEntity<List<ProjectModel>> getAllProjects()
+    public ResponseEntity<List<TurbineModel>> getAllTurbines()
     {
-        return ResponseEntity.ok().body(projectService.getAllProjects());
+        return ResponseEntity.ok().body(turbineService.getAllTurbines());
     }
 }

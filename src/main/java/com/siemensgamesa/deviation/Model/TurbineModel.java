@@ -15,13 +15,14 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "project", schema = "dbo")
-public class ProjectModel {
+@Table(name = "turbine", schema = "dbo")
+public class TurbineModel {
 
     @Id
-    @Column(name = "projectid")
-    private String projectId;
+    @Column(name = "turbineid")
+    private String turbineId;
 
-    @Column(name = "projectname")
-    private String projectName;
+    @ManyToOne
+    @JoinColumn(name = "projectid")
+    private ProjectModel project;
 }
