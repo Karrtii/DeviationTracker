@@ -20,4 +20,10 @@ public class UserController {
         userService.registerUser(userModel);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/getUser")
+    public ResponseEntity<UserModel> getUser(@RequestHeader("Authorization") String header)
+    {
+        return ResponseEntity.ok().body(userService.getUserFromHeader(header));
+    }
 }
