@@ -23,4 +23,10 @@ public class TurbineService implements ITurbineService {
         log.info("Getting all turbines from database");
         return turbineRepository.findAll();
     }
+
+    @Override
+    public List<TurbineModel> getAllByProjectName(String projectName) {
+        log.info("Getting all turbines by project name: {}", projectName);
+        return turbineRepository.findAllByProject_ProjectName(projectName);
+    }
 }
