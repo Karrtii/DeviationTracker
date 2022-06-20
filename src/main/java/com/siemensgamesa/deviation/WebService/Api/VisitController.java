@@ -28,7 +28,7 @@ public class VisitController {
     }
 
     @PostMapping
-    public ResponseEntity addVisit(@RequestBody VisitModel visitModel)
+    public ResponseEntity<Void> addVisit(@RequestBody VisitModel visitModel)
     {
         visitService.addVisit(visitModel);
         return ResponseEntity.ok().build();
