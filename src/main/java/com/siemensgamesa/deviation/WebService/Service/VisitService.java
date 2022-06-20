@@ -30,4 +30,10 @@ public class VisitService implements IVisitService {
         log.info("Getting all visits by turbine Id: {}", turbineId);
         return visitRepository.findAllByTurbine_TurbineId(turbineId);
     }
+
+    @Override
+    public void addVisit(VisitModel visitModel) {
+        log.info("Adding new visit {}", visitModel.getVisitId());
+        visitRepository.save(visitModel);
+    }
 }

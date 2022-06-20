@@ -7,4 +7,5 @@ import java.util.List;
 public interface IVisitService {
     List<VisitModel> getAllVisits();
     List<VisitModel> getAllVisitsByTurbineId(String turbineId);
+    void addVisit(VisitModel visitModel);
 }
