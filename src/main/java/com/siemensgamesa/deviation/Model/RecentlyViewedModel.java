@@ -21,7 +21,7 @@ public class RecentlyViewedModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "recentid")
-    private int recentId;
+    private long recentId;
 
     @Column(name = "userid")
     private long userId;

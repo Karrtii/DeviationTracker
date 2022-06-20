@@ -33,8 +33,10 @@ public class RecentlyViewedService implements IRecentlyViewedService {
     }
 
     @Override
-    public List<RecentlyViewedModel> getAllRecentlyViewed() {
-        log.info("Getting all recently viewed from database");
-        return recentlyViewedRepository.findAll();
+    public List<RecentlyViewedModel> getAllRecentlyViewed(String header) {
+        UserModel user = userService.getUserFromHeader(header);
+
+        log.info("Getting all recently viewed by user id: {}", user.getUserId());
+        return recentlyViewedRepository.findAllByUserIdOrderByRecentIdDesc(user.getUserId());
     }
 }

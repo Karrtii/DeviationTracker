@@ -18,9 +18,9 @@ public class RecentlyViewedController {
     private final RecentlyViewedService recentlyViewedService;
 
     @GetMapping
-    public ResponseEntity<List<RecentlyViewedModel>> getAllRecentlyViewed()
+    public ResponseEntity<List<RecentlyViewedModel>> getAllRecentlyViewed(@RequestHeader("Authorization") String header)
     {
-        return ResponseEntity.ok().body(recentlyViewedService.getAllRecentlyViewed());
+        return ResponseEntity.ok().body(recentlyViewedService.getAllRecentlyViewed(header));
     }
 
     @PostMapping

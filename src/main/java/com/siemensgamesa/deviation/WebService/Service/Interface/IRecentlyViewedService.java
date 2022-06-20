@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface IRecentlyViewedService {
     void addView(String header, String turbineId);
-    List<RecentlyViewedModel> getAllRecentlyViewed();
+    List<RecentlyViewedModel> getAllRecentlyViewed(String header);
 }
