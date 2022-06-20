@@ -3,6 +3,7 @@ import com.siemensgamesa.deviation.Model.UserModel;
 import com.siemensgamesa.deviation.Model.UserRole;
 import com.siemensgamesa.deviation.Repository.IUserRepository;
 import com.siemensgamesa.deviation.Repository.IUserRoleRepository;
+import com.siemensgamesa.deviation.WebService.Service.Interface.IUserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,7 +24,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional
 @Slf4j
-public class UserService implements UserDetailsService{
+public class UserService implements UserDetailsService, IUserService {
 
     private final IUserRepository userRepository;
     private final IUserRoleRepository userRoleRepository;
