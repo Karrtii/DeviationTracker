@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -29,5 +30,11 @@ public class RecentlyViewedService implements IRecentlyViewedService {
         recentlyViewedModel.setTurbineId(turbineId);
 
         recentlyViewedRepository.save(recentlyViewedModel);
+    }
+
+    @Override
+    public List<RecentlyViewedModel> getAllRecentlyViewed() {
+        log.info("Getting all recently viewed from database");
+        return recentlyViewedRepository.findAll();
     }
 }
