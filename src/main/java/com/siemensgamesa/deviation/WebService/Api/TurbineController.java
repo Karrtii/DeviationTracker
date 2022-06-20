@@ -18,7 +18,7 @@ public class TurbineController {
 
     private final ITurbineService turbineService;
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<TurbineModel>> getAllTurbines()
     {
         return ResponseEntity.ok().body(turbineService.getAllTurbines());
@@ -28,5 +28,11 @@ public class TurbineController {
     public ResponseEntity<List<TurbineModel>> getAllTurbinesByProjectName(@RequestParam("projectName") String projectName)
     {
         return ResponseEntity.ok().body(turbineService.getAllByProjectName(projectName));
+    }
+
+    @GetMapping
+    public ResponseEntity<TurbineModel> getTurbineModelByTurbineId(String turbineId)
+    {
+        return ResponseEntity.ok().body(turbineService.getTurbineModelByTurbineId(turbineId));
     }
 }

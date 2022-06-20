@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ITurbineRepository extends JpaRepository<TurbineModel, String> {
     List<TurbineModel> findAllByProject_ProjectName(String projectName);
+    TurbineModel findTurbineModelByTurbineId(String turbineId);
 }

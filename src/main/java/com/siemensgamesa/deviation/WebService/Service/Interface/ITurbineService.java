@@ -7,4 +7,5 @@ import java.util.List;
 public interface ITurbineService {
     List<TurbineModel> getAllTurbines();
     List<TurbineModel> getAllByProjectName(String projectName);
+    TurbineModel getTurbineModelByTurbineId(String turbineId);
 }
