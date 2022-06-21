@@ -23,4 +23,10 @@ public class DeviationService implements IDeviationService {
         log.info("Getting all deviations by visit Id: {}", visitId);
         return deviationRepository.findAllByVisit_VisitId(visitId);
     }
+
+    @Override
+    public void addDeviation(DeviationModel deviationModel) {
+        log.info("Adding new deviation {}", deviationModel.getDeviationId());
+        deviationRepository.save(deviationModel);
+    }
 }
